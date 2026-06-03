@@ -1,0 +1,143 @@
+:root {
+            --brand-pink: #f8b6d2;
+            --brand-dark: #2c2523;
+            --brand-light: #fdfbf7;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--brand-light);
+            padding-top: 100px; /* Space for fixed navbar */
+        }
+
+        h1, h2, h3, .navbar-brand, .cat-name {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: rgba(44, 37, 35, 0.9);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Cat Card Design */
+        .cat-card {
+            border: none;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: #fff;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            height: 100%; /* Ensures all cards in a row have equal height */
+        }
+
+        .cat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        /* PREMIUM IMAGE BACKGROUND (Not Plain) */
+        .cat-img-container {
+            height: 280px;               /* Forces uniform layout across all grids */
+            
+            /* Layered background: Uses a premium subtle paper texture mixed over light off-white */
+            background: 
+                linear-gradient(rgba(253, 251, 247, 0.85), rgba(253, 251, 247, 0.85)), 
+                url('https://www.transparenttextures.com/patterns/natural-paper.png'), 
+                #f4f1eb;
+            background-size: auto;
+            background-repeat: repeat;
+            
+            display: flex;
+            align-items: center;         /* Centers image vertically */
+            justify-content: center;     /* Centers image horizontally */
+            padding: 18px;               /* Keeps image off the edge nicely */
+            overflow: hidden;
+            position: relative;
+        }
+
+        .cat-img-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;         /* Ensures whole picture fits without cropping */
+            border-radius: 12px;         /* Elegant framing curves */
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            
+            /* Drops a realistic shadow behind the photo layer so it pops off the paper background */
+            filter: drop-shadow(0 8px 16px rgba(44, 37, 35, 0.15)); 
+        }
+
+        .cat-card:hover .cat-img-container img {
+            transform: scale(1.05);
+        }
+
+        /* Modal Customization */
+        .modal-content {
+            border-radius: 25px;
+            border: none;
+            overflow: hidden;
+        }
+
+        /* Matching Premium Look for inside the Modal Popup */
+        .modal-cat-img-wrap {
+            background: 
+                linear-gradient(rgba(253, 251, 247, 0.85), rgba(253, 251, 247, 0.85)), 
+                url('https://www.transparenttextures.com/patterns/natural-paper.png'), 
+                #f4f1eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            min-height: 400px;
+            height: 100%;
+        }
+
+        .modal-cat-img {
+            max-width: 100%;
+            max-height: 400px;
+            object-fit: contain;         /* Prevents cropping in modal view too */
+            border-radius: 16px;
+            filter: drop-shadow(0 12px 24px rgba(44, 37, 35, 0.2));
+        }
+
+        .btn-view-profile {
+            background-color: var(--brand-pink);
+            color: var(--brand-dark);
+            border: none;
+            font-weight: 600;
+            border-radius: 50px;
+            padding: 10px 25px;
+            transition: 0.3s;
+        }
+
+        .btn-view-profile:hover {
+            background-color: var(--brand-dark);
+            color: white;
+        }
+
+        .trait-tag {
+            background: #f1f1f1;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            color: #666;
+            margin-right: 5px;
+            text-transform: capitalize;
+        }
+
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 40px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background: var(--brand-pink);
+            bottom: -10px;
+            left: 25%;
+        }
+    
