@@ -2,14 +2,14 @@
 session_start();
 
   
-
+// information in database 
 $host     = "localhost";
 $username = "root";
 $password = "abc123456";
 $dbname   = "cafe_db"; 
 $conn = new mysqli($host, $username, $password, $dbname);
 
-// Check connection
+// it will check the connection from database
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
